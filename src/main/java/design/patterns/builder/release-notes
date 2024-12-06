@@ -1,0 +1,58 @@
+Step 1 
+Create Pizza class 
+Define all ingredents as variable 
+create  set and getter method for all variable 
+create getPizza()
+and sysout all varialbe
+
+
+step 2 create Cook interface  which have all step as method 
+    public Pizza buildDough();
+	public Pizza setupBase();
+	public Pizza spreadSauce();
+	public Pizza applyToppings();	
+	public Pizza doBaking();
+	
+Step 3 - Create HeadChef 
+
+declare the Cook(iterface type ) cook 
+     private Cook cook;
+     
+     //create constructor and pass cook
+
+	public HeadChef(Cook cook) {
+		this.cook = cook;
+	}
+
+///create   method to call all method ( in sequence order) 
+	public Pizza deliverPizza() {
+		cook.buildDough();
+		cook.setupBase();
+		cook.spreadSauce();
+		cook.applyToppings();
+		Pizza pizza = cook.doBaking();
+		return pizza;
+
+	}
+	
+	
+	
+step 4 - ceate ItalianCook/MexicanCook class and it implement the cook interface 
+
+ and implement the method  
+ 
+
+Step 5 - create OrderPizza class ( it is test class it have main method)
+
+we  have to create Italin pizza 
+we create object of ItalianCook and asssign as Cook(I)
+Create Object of HeadChef() --> pass the cook ( it Italian pizza
+we call deliveryPizza()and call get Pizza()
+
+	
+		//Cook cook = new ItalianCook();-// call italiancook
+		Cook cook = new MexicianCook();
+	    HeadChef chef = new HeadChef(cook); pass the cook which we want to call 
+	    chef.deliverPizza().getPizza();// we call pizza step using( ordered defined in deliveredPizza() 
+	    then we call getPizza( ) to sysout
+	    
